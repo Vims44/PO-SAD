@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.35731.53
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cursach", "cursach\cursach.csproj", "{B1AC2A18-70CD-4058-A99A-264D34C88182}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PO-SAD", "cursach\PO-SAD.csproj", "{B1AC2A18-70CD-4058-A99A-264D34C88182}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
