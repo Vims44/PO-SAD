@@ -471,7 +471,7 @@ namespace cursach
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1657, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1595, 28);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -488,9 +488,9 @@ namespace cursach
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(891, 246);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(412, 20);
+            this.label5.Size = new System.Drawing.Size(345, 20);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Взаимосвязь между значением и его частотой:";
+            this.label5.Text = "Гистограмма распределения значений:";
             // 
             // openFileDialog1
             // 
@@ -532,7 +532,7 @@ namespace cursach
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1657, 741);
+            this.ClientSize = new System.Drawing.Size(1595, 722);
             this.Controls.Add(this.checkBox11);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label6);
