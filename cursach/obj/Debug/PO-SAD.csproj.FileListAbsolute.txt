@@ -1,0 +1,11 @@
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\bin\Debug\cursach.exe.config
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\bin\Debug\cursach.exe
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\bin\Debug\cursach.pdb
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\PO-SAD.csproj.AssemblyReference.cache
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\PO-SAD.csproj.ResolveComReference.cache
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\cursach.Form1.resources
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\cursach.Properties.Resources.resources
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\PO-SAD.csproj.GenerateResource.cache
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\PO-SAD.csproj.CoreCompileInputs.cache
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\cursach.exe
+C:\Users\shlyapa\Desktop\курсовая\cursach\cursach\obj\Debug\cursach.pdb

@@ -293,29 +293,29 @@ namespace cursach
         {
             if (radioButton2.Checked)
             {
-                if (int.TryParse(textBox1.Text, out int count) && count > 0)
+                if (!TryGetValidCount(out int count))
+                    return;
+
+                Random rnd = new Random();
+
+                dataGridView1.Rows.Clear();
+                dataGridView1.Columns.Clear();
+
+                for (int i = 0; i < count; i++)
                 {
-                    Random rnd = new Random();
-
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Columns.Clear();
-
-                    for (int i = 0; i < count; i++)
-                    {
-                        var column = new DataGridViewTextBoxColumn();
-                        column.Name = $"col{i + 1}";
-                        column.HeaderText = $"X{i + 1}";
-                        column.Width = 50;
-                        dataGridView1.Columns.Add(column);
-                    }
-
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dataGridView1);
-                    for (int i = 0; i < count; i++)
-                        row.Cells[i].Value = rnd.Next(1, 101); // Генерация от 1 до 100
-
-                    dataGridView1.Rows.Add(row);
+                    var column = new DataGridViewTextBoxColumn();
+                    column.Name = $"col{i + 1}";
+                    column.HeaderText = $"X{i + 1}";
+                    column.Width = 50;
+                    dataGridView1.Columns.Add(column);
                 }
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dataGridView1);
+                for (int i = 0; i < count; i++)
+                    row.Cells[i].Value = rnd.Next(1, 101); // Генерация от 1 до 100
+
+                dataGridView1.Rows.Add(row);
             }
         }
 
@@ -442,6 +442,19 @@ namespace cursach
                 // Добавляем новый
                 tb.KeyPress += TextBox_KeyPress_OnlyNumbers;
             }
+        }
+        private bool TryGetValidCount(out int count)
+        {
+            count = 0;
+            string input = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Введите количество чисел от 1 до 100.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }
