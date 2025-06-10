@@ -313,9 +313,8 @@ namespace cursach
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView1);
                 for (int i = 0; i < count; i++)
-                    row.Cells[i].Value = rnd.Next(1, 101); // Генерация от 1 до 100
-
-                dataGridView1.Rows.Add(row);
+                    row.Cells[i].Value = rnd.Next(1, 101);
+                dataGridView1.Rows.Add(row); // Добавляем сгенерированный ряд
             }
         }
 
@@ -451,6 +450,12 @@ namespace cursach
             if (string.IsNullOrEmpty(input))
             {
                 MessageBox.Show("Введите количество чисел от 1 до 100.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(input, out count) || count < 1 || count > 100)
+            {
+                MessageBox.Show("Введите число от 1 до 100.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
