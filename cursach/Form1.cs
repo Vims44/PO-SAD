@@ -32,17 +32,6 @@ namespace cursach
                 MessageBox.Show("Нет данных для анализа.");
                 return;
             }
-            else
-            {
-                // Получение данных из таблицы (ручной ввод/загрузка файла)
-                data = GetDataFromGrid();
-
-                if (data.Count == 0)
-                {
-                    MessageBox.Show("Нет данных для анализа.");
-                    return;
-                }
-            }
 
             // Расчёт статистики
             StringBuilder result = new StringBuilder();
@@ -68,9 +57,7 @@ namespace cursach
 
             // Добавление в гистограмму
             foreach (var bin in bins)
-            {
                 chart1.Series[0].Points.AddXY(bin.Key, bin.Value);
-            }
 
             // Математическое ожидание
             double sum = 0;
