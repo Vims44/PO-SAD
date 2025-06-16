@@ -24,7 +24,6 @@ namespace cursach
         {
             List<double> data;
 
-            // Если выбран режим генерации случайных данных
             data = GetDataFromGrid();
 
             if (data.Count == 0)
@@ -35,29 +34,16 @@ namespace cursach
 
             // Расчёт статистики
             StringBuilder result = new StringBuilder();
+
+            // Очищаем график
             chart1.Series[0].Points.Clear();
-            chart1.ChartAreas[0].AxisX.Interval = 1; // Показ каждой подписи
-            chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -90;
-            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Microsoft Sans Serif", 10);
-            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
 
-            // Группируем данные (сколько раз встречается каждое значение)
-            int binSize = 10; // Ширина интервала 
-            int minValue = (int)Math.Floor(data.Min());
-            int maxValue = (int)Math.Ceiling(data.Max());
+            // Линейный тип графика
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
-            var bins = new Dictionary<string, int>();
-
-            for (int i = minValue; i <= maxValue; i += binSize)
-            {
-                string label = $"{i}–{i + binSize - 1}";
-                int count = data.Count(x => x >= i && x < i + binSize);
-                bins[label] = count;
-            }
-
-            // Добавление в гистограмму
-            foreach (var bin in bins)
-                chart1.Series[0].Points.AddXY(bin.Key, bin.Value);
+            // Добавляем точки из dataGridView на график
+            for (int i = 0; i < data.Count; i++)
+                chart1.Series[0].Points.AddXY(i + 1, data[i]);
 
             // Математическое ожидание
             double sum = 0;
@@ -193,7 +179,7 @@ namespace cursach
                     }
 
                     dataGridView1.Rows.Add(row);
-                    textBox1.Text = numbers.Count.ToString();
+                    textBox1.Text = numbers.Count.ToString(); // Обновление количества чисел в textBox
                     if (!allValid)
                         MessageBox.Show("Некоторые значения не являются числами и были пропущены.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -211,6 +197,7 @@ namespace cursach
             textBox2.Font = new Font(textBox2.Font.FontFamily, 10);
         }
 
+        // Ввод вручную
         private List<double> GetDataFromGrid()
         {
             var data = new List<double>();
